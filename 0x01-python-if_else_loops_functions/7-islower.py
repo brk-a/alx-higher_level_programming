@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 def islower(c):
-    li = [chr(i) for i in range(ord('a'), ord('z')+1)]
-    if c in li:
+    if ord(c) >= 97 and ord(c) <= 122:
         return True
     return False
 
