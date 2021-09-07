@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-i = 97
-while i < 123:
-            if i != 101 and i != 113:
-                            print(chr(i), end="")
-                                i += 1
+def print_low_alpha_sans():
+            for i in range(97, 123):
+                        if i != 101 and i != 113:
+                                    print('{}'.format(chr(i)), end='')
+
+
+if __name__ == '__main__':
+            print_low_alpha_sans()

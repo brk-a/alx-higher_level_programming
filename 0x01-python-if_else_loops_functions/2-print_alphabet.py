@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-i = 97
-while i < 123:
-        print(chr(i), end="")
-            i += 1
+
+
+def print_low_alpha():
+        for i in 'abcdefghijklmnopqrstuvwxyz':
+                print('{}'.format(i), end='')
+
+if __name__ == '__main__':
+        print_low_alpha()
