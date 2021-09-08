@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def print_unique_combies():
     for i in range(10):
         for j in range(i + 1, 10):

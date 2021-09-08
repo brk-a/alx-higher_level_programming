@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def rev_alpha():
     counter = 0
     for i in range(122, 96, -1):
@@ -7,7 +8,7 @@ def rev_alpha():
             counter = i
         else:
             counter = i - 32
-    print("{}".format(chr(counter)), end='')
+        print(f"{chr(counter)}", end='')
 
 if __name__ == '__main__':
     rev_alpha()
