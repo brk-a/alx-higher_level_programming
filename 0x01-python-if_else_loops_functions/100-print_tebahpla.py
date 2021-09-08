@@ -8,7 +8,7 @@ def rev_alpha():
             counter = i
         else:
             counter = i - 32
-        print(f"{chr(counter)}", end='')
+        print('{}'.format(chr(counter)), end='')
 
 if __name__ == '__main__':
     rev_alpha()
