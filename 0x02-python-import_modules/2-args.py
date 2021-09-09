@@ -15,8 +15,8 @@ if __name__ == '__main__':
         print('0 arguments.')
     elif num_of_args == 1:
         print('1 argument.')
-        print('1: {:s}'.format(argv[1]))
     else:
         print('{:d} arguments.'.format(num_of_args))
-        for i in range(2: num_of_args):
-            print('{:d} {:s}'.format(i, argv[i]))
+
+    for i, j in enumerate(argv[1:], start=1):
+        print('{:d} {:s}'.format(i, j))
