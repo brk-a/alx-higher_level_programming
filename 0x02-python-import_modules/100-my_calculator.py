@@ -32,7 +32,7 @@ if __name__ == '__main__':
             sys.exit(1)
         else:
             result = operators[op](a, b)
-            print(f'{a} {op} {b} = {result}')
+            print('{:d} {:s} {:d} = {:d}'.format(a, op, b, result))
             return result
 
     if num_of_args != 3:

@@ -12,4 +12,4 @@ if __name__ == '__main__':
     total = 0
     for i, j in enumerate(argv[1:]):
         total += int(j)
-    print(f'{total}')
+    print('{:d}'.format(total))
