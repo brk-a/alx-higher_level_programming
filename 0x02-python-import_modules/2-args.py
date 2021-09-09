@@ -19,4 +19,4 @@ if __name__ == '__main__':
         print('{:d} arguments:'.format(num_of_args))
 
     for i, j in enumerate(argv[1:], start=1):
-        print('{:d} {:s}'.format(i, j))
+        print('{:d}: {:s}'.format(i, j))
