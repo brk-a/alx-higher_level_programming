@@ -8,7 +8,7 @@ Docstring goes here
 
 def print_matrix_integer(matrix=[[]]):
     for i in matrix:
-        print(*s)
+        print(*i)
 
 
 if __name__ == '__main__':
