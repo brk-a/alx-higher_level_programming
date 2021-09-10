@@ -16,4 +16,4 @@ def multiple_returns(sentence):
 
 if __name__ == '__main__':
     sentence = 'Cheesy chunky chimey chutney'
-    multiple_returns(sentence)
+    print(multiple_returns(sentence))

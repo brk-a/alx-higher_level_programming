@@ -23,7 +23,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     return tuple(result)
 
 
-if __name == '__main__':
+if __name__ == '__main__':
     tuple_a = (1, 89)
     tuple_b = (88, 11)
-    add_tuple(tuple_a, tuple_b)
+    print(add_tuple(tuple_a, tuple_b))

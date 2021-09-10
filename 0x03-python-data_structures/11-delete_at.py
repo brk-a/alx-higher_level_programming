@@ -17,4 +17,4 @@ def delete_at(my_list=[], idx=0):
 if __name__ == '__main__':
     my_list = [i for i in range(101)]
     idx = 3
-    print(f'{delete_at(my_list, idx)}')
+    print(delete_at(my_list, idx))

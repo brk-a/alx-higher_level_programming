@@ -12,4 +12,4 @@ def divisible_by_2(my_list=[]):
 
 if __name__ == '__main__':
     my_list = [i for i in range(101)]
-    print(f'{divisible_by_2(my_list)}')
+    print(divisible_by_2(my_list))

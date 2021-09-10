@@ -15,5 +15,5 @@ def no_c(my_string):
 
 
 if __name__ == '__main__':
-    my_string = 'Cheeky cheetah, chunky chinchilla, cheesy cheesy chizi'
-    no_c(my_string)
+    my_string = 'Cheeky cheetah, chunky chutney, cheesy chizi'
+    print(no_c(my_string))
