@@ -7,6 +7,7 @@ Docstring goes here
 
 
 def print_list_integer(my_list=[]):
+    my_list = my_list if my_list and type(my_list) is list else []
     for i in my_list:
         print('{:d}'.format(i))
 
