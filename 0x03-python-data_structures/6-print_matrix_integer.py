@@ -7,7 +7,7 @@ Docstring goes here
 
 
 def print_matrix_integer(matrix=[[]]):
-    my_list = my_list if my_list and type(my_list) is list else []
+    matrix = matrix if matrix and type(matrix) is list else []
     if matrix is not None:
         for i in matrix:
             print(*i)
