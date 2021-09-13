@@ -7,8 +7,9 @@ Docstring goes here
 
 
 def print_matrix_integer(matrix=[[]]):
-    for i in matrix:
-        print(*i)
+    if matrix is not None:
+        for i in matrix:
+            print(*i)
 
 
 if __name__ == '__main__':
@@ -16,4 +17,12 @@ if __name__ == '__main__':
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9]]
+    print_matrix_integer(matrix)
+
+    matrix = [[]]
+    print_matrix_integer(matrix)
+
+    matrix = [
+        ['a', 'A'],
+        ('b', 'B')]
     print_matrix_integer(matrix)
