@@ -8,9 +8,17 @@ Docstring goes here
 
 def print_matrix_integer(matrix=[[]]):
     matrix = matrix if matrix and type(matrix) is list else []
-    if matrix is not None:
-        for i in matrix:
-            print(*i)
+        if len(matrix[0]) != 0:
+            rows = len(matrix)
+            columns = len(matrix[0])
+            for r in range(rows):
+                for c in range(columns):
+                    if c == columns - 1:
+                        print('{:d}'.format(matrix[r][c]))
+                    else:
+                        print('{:d} '.format(matrix[r][c]), end='')
+        else:
+            print()
 
 
 if __name__ == '__main__':
