@@ -7,6 +7,7 @@ Docstring goes here
 
 
 def delete_at(my_list=[], idx=0):
+    my_list = my_list if my_list and type(my_list) is list else []
     if idx < 0 or idx >= len(my_list):
         return my_list
     else:
