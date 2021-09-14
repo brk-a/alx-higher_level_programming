@@ -12,10 +12,8 @@ def multiple_returns(sentence):
         prem_char = sentence[0]
         if sen_len == 0:
             return (sen_len, None)
-        else:
-            return (sen_len, prem_char)
-    else:
-        return None
+        return (sen_len, prem_char
+
 
 if __name__ == '__main__':
     sentence = 'Cheesy chunky chimey chutney'
