@@ -10,7 +10,7 @@ def print_reversed_list_integer(my_list=[]):
     my_list = my_list if my_list and type(my_list) is list else []
     if my_list is not None:
         for i in range(len(my_list), -1, -1):
-            print('{:d}'.format(i))
+            print('{:d}'.format(my_list[i]))
 
 
 if __name__ == '__main__':

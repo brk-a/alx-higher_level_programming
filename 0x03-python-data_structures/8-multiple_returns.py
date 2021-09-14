@@ -14,6 +14,8 @@ def multiple_returns(sentence):
             return (sen_len, None)
         else:
             return (sen_len, prem_char)
+    else:
+        return None
 
 if __name__ == '__main__':
     sentence = 'Cheesy chunky chimey chutney'
