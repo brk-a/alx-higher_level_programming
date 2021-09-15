@@ -8,7 +8,8 @@ Docstring goes here
 
 
 def simple_delete(a_dictionary, key=""):
-    a_dictionary = a_dictionary if a_dictionary and type(a_dictionary) == dict else {}
+    a_dictionary = a_dictionary if a_dictionary \
+                   and type(a_dictionary) == dict else {}
     if key in a_dictionary:
         del a_dictionary[key]
         return a_dictionary

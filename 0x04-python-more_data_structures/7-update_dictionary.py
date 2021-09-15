@@ -7,7 +7,8 @@ Docstring goes here
 
 
 def update_dictionary(a_dictionary, key, value):
-    a_dictionary = a_dictionary if a_dictionary and type(a_dictionary) == dict else {}
+    a_dictionary = a_dictionary if a_dictionary \
+                   and type(a_dictionary) == dict else {}
     new_dict = a_dictionary
     new_dict[key] = value
     return new_dict
