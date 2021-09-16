@@ -12,7 +12,8 @@ def complex_delete(a_dictionary, value):
     if value not in a_dictionary.values():
         return a_dictionary
     else:
-        for k, v in a_dictionary.items():
+        new_dict = dict(a_dictionary)
+        for k, v in new_dict.items():
             if v == value:
                 a_dictionary.pop(k)
         return a_dictionary
