@@ -14,8 +14,8 @@ def weight_average(my_list=[]):
         for tup in my_list:
             dividend += tup[0] * tup[1]
             divisor += tup[1]
-            return dividend / divisor
-    except ZeroDivisionError:
+        return dividend / divisor
+    except:
         return 0
 
 
