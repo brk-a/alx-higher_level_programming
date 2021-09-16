@@ -12,7 +12,7 @@ def simple_delete(a_dictionary, key=""):
                    and type(a_dictionary) == dict else {}
     if key in a_dictionary:
         del a_dictionary[key]
-        return a_dictionary
+    return a_dictionary
 
 
 if __name__ == '__main__':
