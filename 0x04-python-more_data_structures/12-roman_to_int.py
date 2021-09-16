@@ -8,7 +8,9 @@ Docstring goes here
 
 def roman_to_int(roman_string):
     roman_string = roman_string.upper() if roman_string \
-                   and type(roman_string) == str else return 0
+                   and type(roman_string) == str else ''
+    if roman_string == None or roman_string == '':
+        return 0
     translations = {
         "I": 1,
         "V": 5,
