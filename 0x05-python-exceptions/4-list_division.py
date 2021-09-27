@@ -6,25 +6,31 @@ Docstring goes here
 """
 
 
+def safe_div(a, b):
+    resultt = 0
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        print(f'division by 0')
+    except TypeError:
+        print(f'wrong type')
+    finally:
+        return result
+
+
 def list_division(my_list_1, my_list_2, list_length):
     my_list_1 = my_list_1 if my_list_1 and type(my_list_1) == list else []
     my_list_2 = my_list_2 if my_list_2 and type(my_list_2) == list else []
 
-    try:
-        new_li = [my_list_1[i] / my_list_2[i] for i in range(list_length)]
-    except (IndexError, TypeError, ValueError, ZeroDivisionError)\
-           as ide, tye, vle, zde:
-        new_li.append(0)
-        if zde:
-            print(f'division by 0')
-        if tye or vle:
-            print(f'wrong type')
-        if ide:
+    new_li = []
+    for i in range(list_length):
+        try:
+            new_li.append(safe_div(my_list_1[i], my_list_2[i]))
+        except IndexError:
             print(f'out of range')
-    except AttributeError:
-        print(f'out of range')
-    finally:
-        return new_li
+            new_li.append(0)
+
+    return new_li
 
 
 if __name__ == '__main__':
