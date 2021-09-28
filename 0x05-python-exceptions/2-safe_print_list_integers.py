@@ -15,7 +15,7 @@ def safe_print_list_integers(my_list=[], x=0):
                 print('{:d}'.format(my_list[j]), end='')
                 i += 1
         except (AttributeError, IndexError, TypeError, ValueError):
-            pass
+            raise
     print()
     return i
 

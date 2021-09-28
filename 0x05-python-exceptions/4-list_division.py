@@ -7,7 +7,7 @@ Docstring goes here
 
 
 def safe_div(a, b):
-    resultt = 0
+    result = 0
     try:
         result = a / b
     except ZeroDivisionError:
