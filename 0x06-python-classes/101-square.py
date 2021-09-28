@@ -82,6 +82,7 @@ class Square:
             sqr_str += ' ' * self.__position[0] + '#' * self.__size
         return sqr_str
 
+
 if __name__ == '__main__':
     my_square = Square(5, (0, 0))
     print(my_square)
