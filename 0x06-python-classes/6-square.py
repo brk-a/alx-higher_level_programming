@@ -9,14 +9,18 @@ defines a square by: (based on 5-square.py)
 
 
 class Square:
+    """class square"""
     def __init__(self, size=0, position=(0, 0)):
+        """__init__"""
         self.size = size
         self.position = position
 
     def area(self):
+        """area"""
         return self.__size * self.__size
 
     def my_print(self):
+        """my_print"""
         if self.__size == 0:
             print()
         for i in range(self.__position[1]):
@@ -27,10 +31,12 @@ class Square:
 
     @property
     def size(self):
+        """size property"""
         return self.__size
 
     @size.setter
     def size(self, val):
+        """size setter"""
         if type(val) != int:
             raise TypeError('size must be an integer')
         elif val < 0:
@@ -40,10 +46,12 @@ class Square:
 
     @property
     def position(self):
+        """position property"""
         return self.__position
 
     @position.setter
     def position(self, val):
+        """position setter"""
         if not isinstance(val, tuple) or len(val) != 2:
             raise TypeError('position must be a tuple of 2 positive integers')
         elif not isinstance(val[0], int) or not isinstance(val[1], int):

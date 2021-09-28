@@ -10,6 +10,7 @@ Creates an instance of a square
 
 
 class Square:
+    """ class square"""
     pass
 
 

@@ -9,18 +9,23 @@ defines a square by: (based on 3-square.py)
 
 
 class Square:
+    """class square"""
     def __init__(self, size=0):
+        """__init___"""
         self.size = size
 
     def area(self):
+        """area"""
         return self.__size * self.__size
 
     @property
     def size(self):
+        """size property"""
         return self.__size
 
     @size.setter
     def size(self, val):
+        """size setter"""
         if type(val) != int:
             raise TypeError('size must be an integer')
         elif val < 0:

@@ -8,7 +8,9 @@ defines a square by: (based on 2-square.py)
 
 
 class Square:
+    """class square"""
     def __init__(self, size=0):
+        """__init__"""
         if type(size) != int:
             raise TypeError('size must be an integer')
         elif size < 0:
@@ -17,6 +19,7 @@ class Square:
             self.__size = size
 
     def area(self):
+        """area"""
         return self.__size * self.__size
 
 
