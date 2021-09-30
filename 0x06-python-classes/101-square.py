@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+102-square.py
+
+"""
 
 class Square:
     """Square class."""
