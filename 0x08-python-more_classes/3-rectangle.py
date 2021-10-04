@@ -68,8 +68,7 @@ if __name__ == '__main__':
     Rectangle = __import__('3-rectangle').Rectangle
 
     my_rect = Rectangle(2, 4)
-    print\
-        ("Area: {} - Perimeter: {}".format(my_rect.area(), my_rect.perimeter()))
+    print("Area: {} - Perimeter: {}".format(my_rect.area(), my_rect.perimeter()))
 
     print(str(my_rect))
     print(repr(my_rect))

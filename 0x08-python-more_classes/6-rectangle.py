@@ -74,6 +74,7 @@ class Rectangle:
     def __del__(self):
         ''' __del__ '''
         print(f'Bye Rectangle ...')
+        Rectangle.number_of_instances -= 1
 
 
 if __name__ == '__main__':
