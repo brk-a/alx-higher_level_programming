@@ -74,7 +74,7 @@ class Rectangle:
 
     def __del__(self):
         ''' __del__ '''
-        print(f'Bye Rectangle ...')
+        print(f'Bye rectangle...')
         Rectangle.number_of_instances -= 1
 
     @staticmethod

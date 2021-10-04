@@ -69,7 +69,7 @@ class Rectangle:
 
     def __del__(self):
         ''' __del__ '''
-        print(f'Bye Rectangle ...')
+        print(f'Bye rectangle...')
 
 
 if __name__ == '__main__':
