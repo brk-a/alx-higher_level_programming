@@ -1,0 +1,29 @@
+The ``100-matrix_mul`` module
+======================
+
+Using ``matrix_mul``
+-------------------
+
+This is an example text file in reStructuredText format.  First import
+``matrix_mul`` from the ``100-matrix_mul`` module:
+
+-------------------
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+
+# m_a = valid matrix, m_b = valid matrix
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+# m_a = invalid matrix, m_b = valid matrix
+>>> print(matrix_mul([[1, 2, 3, 4]], [[1, 2], [3, 4]]))
+Traceback call last
+...
+ValueError: m_a can't be empty
+
+# m_a = valid matrix, m_b = invalid matrix
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2, 3, 4]]))
+Traceback call last
+...
+ValueError: m_b can't be empty 
