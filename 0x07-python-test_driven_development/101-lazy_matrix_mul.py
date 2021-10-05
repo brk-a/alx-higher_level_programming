@@ -6,6 +6,8 @@ Docstring goes here
 
 '''
 
+import numpy as np
+
 
 class Matrix:
     '''class matrix'''
@@ -38,9 +40,6 @@ class Matrix:
         if col == 0:
             raise ValueError(f"{Matrix.name} can't be empty")
         for i in range(row):
-            if len(matrix[i]) != col:
-                raise TypeError(f'each row of {Matrix.name} must be of the same size')
-        for i in range(row):
             if not type(matrix[i]) == list:
                 raise TypeError(f'{Matrix.name} must be a list of lists')
         for i in range(row):
@@ -49,7 +48,7 @@ class Matrix:
                 if not isinstance(elem, int) and not isinstance(elem, float):
                     raise TypeError(f'{Matrix.name} should contain only integers or floats')
 
-        self.__matrix = matrix
+        self.__matrix = np.array(matrix)
 
     def __len__(self):
         '''len of object Matrix'''
@@ -61,7 +60,7 @@ class Matrix:
 
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     '''matrix_mul'''
     m_a = m_a if m_a and type(m_a) == list else None
     m_b = m_b if m_b and type(m_b) == list else None
@@ -69,29 +68,12 @@ def matrix_mul(m_a, m_b):
     m_a = Matrix.set_name('m_a', m_a)
     m_b = Matrix.set_name('m_b', m_b)
 
-    row_a = len(m_a)
-    col_a = len(m_a[0])
-    row_b = len(m_b)
-    col_b = len(m_b[0])
-
-    if col_a != row_b:
-        raise ValueError(f"m_a and m_b can't be multiplied")
-
-    new_m = []
-    new_r = []
-    for i in range(row_a):
-        for j in range(col_b):
-            elem_sum = 0
-            for k in range(row_b):
-                elem_sum += m_a[i][k] * m_b[k][j]
-            new_r.append(elem_sum)
-        new_m.append(new_r)
-        new_r = []
+    new_m = np.matmul(m_a, m_b)
     return new_m
 
 
 if __name__ == '__main__':
-    matrix_mul = __import__('100-matrix_mul').matrix_mul
+    lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
-    print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-    print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+    print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+    print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
