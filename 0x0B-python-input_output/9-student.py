@@ -19,6 +19,7 @@ class Student:
         return (self.__dict__)
 
 
+'''
 if __name__ == '__main__':
     Student = __import__('9-student').Student
 
@@ -31,3 +32,4 @@ if __name__ == '__main__':
         print(type(j_student['first_name']))
         print(j_student['age'])
         print(type(j_student['age']))
+'''

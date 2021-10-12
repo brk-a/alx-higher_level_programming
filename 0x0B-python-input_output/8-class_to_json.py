@@ -11,6 +11,7 @@ def class_to_json(obj):
     return (obj.__dict__)
 
 
+'''
 if __name__ == '__main__':
     """ My class module
 """
@@ -37,3 +38,4 @@ if __name__ == '__main__':
     mj = class_to_json(m)
     print(type(mj))
     print(mj)
+'''
