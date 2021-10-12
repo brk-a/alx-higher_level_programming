@@ -16,7 +16,7 @@ class Student:
 
     def to_json(self, attrs=None):
         ''' to_json method '''
-        obj = self.__dict__
+        obj = (self.__dict__)
         if not attrs:
             return obj
         else:
@@ -27,7 +27,6 @@ class Student:
             return new_di
 
 
-'''
 if __name__ == '__main__':
     Student = __import__('10-student').Student
 
@@ -41,4 +40,3 @@ if __name__ == '__main__':
     print(j_student_1)
     print(j_student_2)
     print(j_student_3)
-'''

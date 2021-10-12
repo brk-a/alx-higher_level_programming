@@ -8,7 +8,7 @@ Docstring goes here
 
 def class_to_json(obj):
     ''' class_to_json fn '''
-    return obj.__dict__
+    return (obj.__dict__)
 
 
 if __name__ == '__main__':

@@ -16,7 +16,7 @@ class Student:
 
     def to_json(self):
         ''' to_json method '''
-        return self.__dict__
+        return (self.__dict__)
 
 
 if __name__ == '__main__':
