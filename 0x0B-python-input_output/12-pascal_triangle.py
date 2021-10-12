@@ -15,8 +15,7 @@ def my_f(x):
 
 def my_combos(a):
     ''' combinations: nCr '''
-    li = [int(my_f(a) / (my_f(r) * my_f(a - r))) for r in range(a + 1)]
-    return li
+    return [int(my_f(a) / (my_f(r) * my_f(a - r))) for r in range(a + 1)]
 
 
 def pascal_triangle(n):
@@ -24,9 +23,19 @@ def pascal_triangle(n):
     if n <= 0:
         print(f'[]')
     else:
-        for i in range(n):
-            print(my_combos(i))
+        return [my_combos(i) for i in range(n)]
 
 
 if __name__ == '__main__':
-    pascal_triangle(5)
+    pascal_triangle = __import__('12-pascal_triangle').pascal_triangle
+
+
+    def print_triangle(triangle):
+        """
+        Print the triangle
+        """
+        for row in triangle:
+            print("[{}]".format(",".join([str(x) for x in row])))
+
+
+    print_triangle(pascal_triangle(5))

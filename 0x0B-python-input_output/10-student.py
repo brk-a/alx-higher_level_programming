@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 '''
-docstring goes here
+Docstring goes here
 
 '''
 
@@ -26,7 +26,7 @@ class Student:
                     new_di[i] = obj[i]
             return new_di
 
-
+'''
 if __name__ == '__main__':
     Student = __import__('10-student').Student
 
@@ -40,3 +40,4 @@ if __name__ == '__main__':
     print(j_student_1)
     print(j_student_2)
     print(j_student_3)
+'''
