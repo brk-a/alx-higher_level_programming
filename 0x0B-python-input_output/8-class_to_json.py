@@ -15,7 +15,6 @@ if __name__ == '__main__':
     """ My class module
 """
 
-
     class MyClass:
         """ My class
         """
