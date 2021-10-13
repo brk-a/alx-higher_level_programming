@@ -9,7 +9,7 @@ Docstring goes here
 def append_write(filename="", text=""):
     ''' append_write fn '''
     ch_count = 0
-    with open(filename, 'a', encoding-'utf-8') as f:
+    with open(filename, 'a', encoding='utf-8') as f:
         ch_count += f.write(text)
     return ch_count
 

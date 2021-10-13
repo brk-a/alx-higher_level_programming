@@ -21,7 +21,7 @@ def my_combos(a):
 def pascal_triangle(n):
     ''' pascal_triangle '''
     if n <= 0:
-        print(f'[]')
+        return []
     else:
         return [my_combos(i) for i in range(n)]
 

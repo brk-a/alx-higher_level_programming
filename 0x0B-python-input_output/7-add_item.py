@@ -22,7 +22,7 @@ if not os.path.isfile(f_name):
 if num_args > 1:
     obj = load_from_j_f(f_name)
     for i in range(1, num_args):
-        obj.append(argv[i])
+        obj.append(sys.argv[i])
     save_to_j_f(obj, f_name)
 
 if __name__ == '__main__':
