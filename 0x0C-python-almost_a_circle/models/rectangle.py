@@ -19,6 +19,9 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+
     @property
     def width(self):
         ''' width getter '''
@@ -79,13 +82,15 @@ class Rectangle(Base):
         ''' area methode '''
         return self.__height * self.__width
 
+    def display(self):
+        ''' represent rect using '#' '''
+        for j in range(self.__height):
+            print(f'#'*self.__width)
+
 
 if __name__ == '__main__':
-    r1 = Rectangle(3, 2)
-    print(r1.area())
+    r1 = Rectangle(4, 6, 2, 1, 12)
+    print(r1)
 
-    r2 = Rectangle(2, 10)
-    print(r2.area())
-
-    r3 = Rectangle(8, 7, 0, 0, 12)
-    print(r3.area())
+    r2 = Rectangle(5, 5, 1)
+    print(r2)
