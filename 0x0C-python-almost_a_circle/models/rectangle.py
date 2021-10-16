@@ -84,8 +84,30 @@ class Rectangle(Base):
 
     def display(self):
         ''' represent rect using '#' '''
-        for j in range(self.__height):
-            print(f'#'*self.__width)
+        rows = self.height
+        cols = self.width
+        for _ in range(self.y):
+            print()
+        for i in range(rows):
+            print(' ' * self.x, end='')
+            for j in range(cols):
+                print('#', end='')
+            print()
+
+    def update(self, *args):
+        ''' update method '''
+        for i, arg in enumerate(args):
+            if i == 0:
+                self.id = arg
+            if i == 1:
+                self.width = arg
+            if i == 2:
+                self.height = arg
+            if i == 3:
+                self.x = arg
+            if i == 4:
+                self.y = arg
+
 
 
 if __name__ == '__main__':
