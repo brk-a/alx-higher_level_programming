@@ -94,20 +94,32 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         ''' update method '''
-        for i, arg in enumerate(args):
-            if i == 0:
-                self.id = arg
-            if i == 1:
-                self.width = arg
-            if i == 2:
-                self.height = arg
-            if i == 3:
-                self.x = arg
-            if i == 4:
-                self.y = arg
-
+        if len(args) > 0:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.width = arg
+                if i == 2:
+                    self.height = arg
+                if i == 3:
+                    self.x = arg
+                if i == 4:
+                    self.y = arg
+        elif len(kwargs) > 0:
+            for k, v in kwargs.items():
+                if k == 'id':
+                    self.id = v
+                if k == 'width':
+                    self.width = v
+                if k == 'height':
+                    self.height = v
+                if k == 'x':
+                    self.x = v
+                if k == 'y':
+                    self.y = v
 
 
 if __name__ == '__main__':
