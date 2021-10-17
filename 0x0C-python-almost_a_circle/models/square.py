@@ -5,7 +5,7 @@ Docstring goes here
 
 '''
 
-from base import Rectangle
+from rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -20,7 +20,7 @@ class Square(Rectangle):
     @property
     def size(self):
         ''' size property '''
-        return size.width
+        return self.width
 
     @size.setter
     def size(self, size):
@@ -50,3 +50,24 @@ class Square(Rectangle):
                     self.x = v
                 if k == 'y':
                     self.y = v
+
+    def to_dictionary(self):
+        ''' to_dict methode '''
+        a = ['id', 'size', 'x', 'y']
+        b = [getattr(self, attr) for attr in a]
+        return {k:v for k, v in zip(a, b)}
+
+
+if __name__ == "__main__":
+
+    s1 = Square(10, 2, 1)
+    print(s1)
+    s1_dictionary = s1.to_dictionary()
+    print(s1_dictionary)
+    print(type(s1_dictionary))
+
+    s2 = Square(1, 1)
+    print(s2)
+    s2.update(**s1_dictionary)
+    print(s2)
+    print(s1 == s2)
