@@ -5,6 +5,8 @@ Docstring goes here
 
 '''
 
+import json
+
 
 class Base:
     ''' class Base '''
@@ -18,20 +20,28 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        ''' methodio to_json_string '''
+        list_dictionaries = list_dictionaries if list_dictionaries and type(list_dictionaries) == list else '[]'
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        ''' methodio save_to_file '''
+        list_objs = list_objs if list_objs and type(list_objs) == list else []
+        a = [obj.to_dictionary() for obj in list_objs]
+        if len(a) > 0:
+            b = Base.to_json_string(a)
+        with(cls.__name__ + '.json', 'w') as f:
+            f.write(b)
+
 
 if __name__ == '__main__':
-
-    b1 = Base()
-    print(b1.id)
-
-    b2 = Base()
-    print(b2.id)
-
-    b3 = Base()
-    print(b3.id)
-
-    b4 = Base(12)
-    print(b4.id)
-
-    b5 = Base()
-    print(b5.id)
+    r1 = Rectangle(10, 7, 2, 8)
+    dictionary = r1.to_dictionary()
+    json_dictionary = Base.to_json_string([dictionary])
+    print(dictionary)
+    print(type(dictionary))
+    print(json_dictionary)
+    print(type(json_dictionary))
