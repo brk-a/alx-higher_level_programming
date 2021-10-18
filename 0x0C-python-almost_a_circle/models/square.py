@@ -55,7 +55,7 @@ class Square(Rectangle):
         ''' to_dict methode '''
         a = ['id', 'size', 'x', 'y']
         b = [getattr(self, attr) for attr in a]
-        return {k:v for k, v in zip(a, b)}
+        return {k: v for k, v in zip(a, b)}
 
 
 if __name__ == "__main__":

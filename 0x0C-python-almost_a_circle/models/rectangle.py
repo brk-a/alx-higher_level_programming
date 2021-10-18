@@ -10,7 +10,7 @@ from base import Base
 
 class Rectangle(Base):
     ''' class Rectangle. Inherits from class Base '''
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         ''' __init__ method '''
         self.width = width
@@ -125,19 +125,8 @@ class Rectangle(Base):
         ''' to_dict method '''
         a = ['id', 'width', 'height', 'x', 'y']
         b = [getattr(self, attr) for attr in a]
-        return {k:v for k, v in zip(a, b)}
+        return {k: v for k, v in zip(a, b)}
 
 
 if __name__ == '__main__':
-    r1 = Rectangle(10, 2, 1, 9)
-    print(r1)
-    r1_dictionary = r1.to_dictionary()
-    print(r1_dictionary)
-    print(type(r1_dictionary))
-
-    r2 = Rectangle(1, 1)
-    print(r2)
-    r2.update(**r1_dictionary)
-    print(r2)
-    print(r1 == r2)
-    
+    pass

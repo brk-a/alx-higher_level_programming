@@ -23,25 +23,52 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         ''' methodio to_json_string '''
-        list_dictionaries = list_dictionaries if list_dictionaries and type(list_dictionaries) == list else '[]'
+        list_dictionaries =\
+            list_dictionaries if list_dictionaries and\
+            type(list_dictionaries) == list else '[]'
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def from_json_string(json_string):
+        ''' methode from_json_string '''
+        json_string =\
+            json_string if json_string and type(json_string) == str else ''
+        if len(json_string) == 0:
+            return []
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        ''' methodio save_to_file '''
+        ''' methode save_to_file '''
         list_objs = list_objs if list_objs and type(list_objs) == list else []
         a = [obj.to_dictionary() for obj in list_objs]
         if len(a) > 0:
             b = Base.to_json_string(a)
-        with(cls.__name__ + '.json', 'w') as f:
-            f.write(b)
+        with(f'{cls.__name__}.json', 'w') as fi:
+            fi.write(b)
+
+    @classmethod
+    def create(cls, **dictionary):
+        ''' methode create '''
+        obj = None
+        if cls.__name__ == 'Rectangle':
+            obj = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            obj = cls(1)
+        cls.update(obj, **dictionary)
+        return obj
+
+    @classmethod
+    def load_from_file(cls):
+        ''' methode load_from_file '''
+        try:
+            with open(f'{cls.__name__}.json', 'r', encoding='utf-8') as fi:
+                output_li = cls.from_json_string(fi.read())
+                obj_li = [cls.create(**obj)) for obj in output_li]
+        except Exception:
+            pass
+        return obj_li
 
 
 if __name__ == '__main__':
-    r1 = Rectangle(10, 7, 2, 8)
-    dictionary = r1.to_dictionary()
-    json_dictionary = Base.to_json_string([dictionary])
-    print(dictionary)
-    print(type(dictionary))
-    print(json_dictionary)
-    print(type(json_dictionary))
+    pass
