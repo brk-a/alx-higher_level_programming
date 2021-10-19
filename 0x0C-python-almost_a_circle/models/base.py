@@ -6,6 +6,7 @@ Docstring goes here
 '''
 
 import json
+import csv
 
 
 class Base:
@@ -37,14 +38,22 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @staticmethod
+    def to_csv_string(list_dictionaries):
+        ''' to_csv_string method '''
+        list_dictionaries =\
+            list_dictionaries if list_dictionaries and\
+            type(list_dictionaries) == list else '[]'
+        return [[v for (k, v) in list_dictionaries[i].items()] for i in range(len(a))]
+
     @classmethod
     def save_to_file(cls, list_objs):
         ''' methode save_to_file '''
         list_objs = list_objs if list_objs and type(list_objs) == list else []
         a = [obj.to_dictionary() for obj in list_objs]
-        if len(a) > 0:
+        if len(a) >= 0:
             b = Base.to_json_string(a)
-        with(f'{cls.__name__}.json', 'w') as fi:
+        with open(f'{cls.__name__}.json', 'w') as fi:
             fi.write(b)
 
     @classmethod
@@ -61,10 +70,35 @@ class Base:
     @classmethod
     def load_from_file(cls):
         ''' methode load_from_file '''
+        obj_li = []
         try:
             with open(f'{cls.__name__}.json', 'r', encoding='utf-8') as fi:
                 output_li = cls.from_json_string(fi.read())
                 obj_li = [cls.create(**obj)) for obj in output_li]
+        except Exception:
+            pass
+        return obj_li
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        ''' save_to_file_csv method '''
+        list_objs = list_objs if list_objs and type(list_objs) == list else []
+        a = [obj.to_dictionary() for obj in list_objs]
+        if len(a) >= 0:
+            b = [Base.to_csv_string(a) for i in a]
+            c = [i for i in b]
+        with(open(f'{cls.__name__}.csv', 'w', newline='')) as fi:
+            writer = csv.writer(fi)
+            writer.writerows(c)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        ''' load_from_file method '''
+        obj_li = []
+        try:
+            with open(f'{cls.__name__}.csv', 'r') as fi:
+                reader = csv.reader(fi)
+                obj_li = [i for i in reader]
         except Exception:
             pass
         return obj_li
