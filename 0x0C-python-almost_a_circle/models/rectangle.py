@@ -20,7 +20,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        return f'[{self.__class__.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
+        return '[{}] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(self.__class.__name, self.id, self.x, self.y, self.width, self.height)
 
     @property
     def width(self):
@@ -46,36 +46,36 @@ class Rectangle(Base):
     def width(self, width):
         ''' width setter '''
         if type(width) is not int:
-            raise TypeError(f'width must be an integer')
+            raise TypeError('width must be an integer')
         if width <= 0:
-            raise ValueError(f'width must be > 0')
+            raise ValueError('width must be > 0')
         self.__width = width
 
     @height.setter
     def height(self, height):
         ''' height setter '''
         if type(height) is not int:
-            raise TypeError(f'height must be an integer')
+            raise TypeError('height must be an integer')
         if height <= 0:
-            raise ValueError(f'height must be > 0')
+            raise ValueError('height must be > 0')
         self.__height = height
 
     @x.setter
     def x(self, x):
         ''' x setter '''
         if type(x) is not int:
-            raise TypeError(f'x must be an integer')
+            raise TypeError('x must be an integer')
         if x < 0:
-            raise ValueError(f'x must be > 0')
+            raise ValueError('x must be > 0')
         self.__x = x
 
     @y.setter
     def y(self, y):
         ''' y setter '''
         if type(y) is not int:
-            raise TypeError(f'y must be an integer')
+            raise TypeError('y must be an integer')
         if y < 0:
-            raise ValueError(f'y must be > 0')
+            raise ValueError('y must be > 0')
         self.__y = y
 
     def area(self):

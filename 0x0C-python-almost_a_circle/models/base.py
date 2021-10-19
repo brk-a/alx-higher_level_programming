@@ -53,7 +53,7 @@ class Base:
         a = [obj.to_dictionary() for obj in list_objs]
         if len(a) >= 0:
             b = Base.to_json_string(a)
-        with open(f'{cls.__name__}.json', 'w') as fi:
+        with open(cls.__name__+'json', 'w') as fi:
             fi.write(b)
 
     @classmethod
@@ -87,7 +87,7 @@ class Base:
         if len(a) >= 0:
             b = [Base.to_csv_string(a) for i in a]
             c = [i for i in b]
-        with(open(f'{cls.__name__}.csv', 'w', newline='')) as fi:
+        with(open(cls.__name__ + '.csv', 'w', newline='')) as fi:
             writer = csv.writer(fi)
             writer.writerows(c)
 
@@ -96,7 +96,7 @@ class Base:
         ''' load_from_file method '''
         obj_li = []
         try:
-            with open(f'{cls.__name__}.csv', 'r') as fi:
+            with open(cls.__name__ +'.csv', 'r') as fi:
                 reader = csv.reader(fi)
                 obj_li = [i for i in reader]
         except Exception:
