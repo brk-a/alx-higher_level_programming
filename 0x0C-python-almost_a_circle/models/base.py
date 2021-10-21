@@ -7,6 +7,7 @@ Docstring goes here
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -44,7 +45,18 @@ class Base:
         list_dictionaries =\
             list_dictionaries if list_dictionaries and\
             type(list_dictionaries) == list else '[]'
-        return [[v for (k, v) in list_dictionaries[i].items()] for i in range(len(a))]
+        return [[v for (k, v) in\
+                 list_dictionaries[i].items()] for i in range(len(a))]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        ''' method draw '''
+        marker = turtle.Turtle()
+        marker.penup()
+        marker.goto(0, 0)
+        marker.pendown()
+        draw_shape()
+        marker.exitonclick()
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -72,7 +84,7 @@ class Base:
         ''' methode load_from_file '''
         obj_li = []
         try:
-            with open(f'{cls.__name__}.json', 'r', encoding='utf-8') as fi:
+            with open(cls.__name__ +'.json', 'r', encoding='utf-8') as fi:
                 output_li = cls.from_json_string(fi.read())
                 obj_li = [cls.create(**obj)) for obj in output_li]
         except Exception:
@@ -102,6 +114,26 @@ class Base:
         except Exception:
             pass
         return obj_li
+
+    @classmethod
+    def draw_shape(cls):
+        ''' method draw_shape '''
+        if cls.__name__ == 'Rectangle':
+            marker.forward(cls.width)
+            marker.left(90)
+            marker.forward(cls.height)
+            marker.left(90)
+            marker.forward(cls.width)
+            marker.left(90)
+            marker.forward(cls.height)
+        elif cls.__name__ == 'Square':
+            marker.forward(cls.size)
+            marker.left(90)
+            marker.forward(cls.size)
+            marker.left(90)
+            marker.forward(cls.size)
+            marker.left(90)
+            marker.forward(cls.size)
 
 
 if __name__ == '__main__':
