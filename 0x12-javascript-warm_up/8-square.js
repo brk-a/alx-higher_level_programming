@@ -12,6 +12,6 @@ if (isNaN(times)) {
     for (column = 0; column < times; column++) {
       s += 'X';
     }
+    console.log(s);
   }
-  console.log(s);
 }
