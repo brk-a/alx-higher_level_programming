@@ -3,6 +3,6 @@
 let i = 0;
 
 exports.logMe = function (item) {
-console.log(`${i}: ${item}`);
-i += 1;
+  console.log(`${i}: ${item}`);
+  i += 1;
 };
