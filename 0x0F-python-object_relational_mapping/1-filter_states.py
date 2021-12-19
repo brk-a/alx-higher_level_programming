@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-'''
-Display states in database by ascending id order
-'''
+"""
+Display states in database by ascending id order that start with 'N'
+   Script should take 3 arguments:
+   mysql username, mysql password and database name
+"""
 
 if __name__ == '__main__':
-
     import sys
     import MySQLdb
 
@@ -19,7 +20,9 @@ if __name__ == '__main__':
             charset="utf8"
         ) as conn:
             with conn.cursor() as cur:
-                cur.execute("""SELECT * FROM states ORDER BY states.id ASC""")
+                cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'
+                    ORDER BY states.id ASC""")
                 query_rows = cur.fetchall()
                 for row in query_rows:
-                    print(row)
+                    if row[1][0] == "N":
+                        print(row)
