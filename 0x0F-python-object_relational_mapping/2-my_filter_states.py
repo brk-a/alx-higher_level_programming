@@ -19,7 +19,8 @@ if __name__ == '__main__':
         charset="utf8"
     ) as conn:
         with conn.cursor() as cur:
-            query = """SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC"""
+            query =\
+                """SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC"""
             cur.execute(query.format(sys.argv[4]))
             query_rows = cur.fetchall()
             for row in query_rows:
