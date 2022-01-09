@@ -11,7 +11,7 @@ if __name__ == '__main__':
     import sys
     import requests
 
-    q = '' if len(sys.argv) > 1 else sys.argv[1]
+    q = '' if len(sys.argv) == 1 else sys.argv[1]
     payload = {'q': q}
     url = 'http://0.0.0.0:5000/search_user'
 
