@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-const host = 'https://swapi-api.hbtn.io/api/films/:id'.concat('', process.argv[2]);
+const host = 'https://swapi-api.hbtn.io/api/films/'.concat('', process.argv[2]);
 
 request(host, function (err, res, body) {
   if (err) {
