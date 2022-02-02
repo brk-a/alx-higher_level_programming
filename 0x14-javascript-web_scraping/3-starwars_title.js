@@ -2,18 +2,12 @@
 
 const request = require('request');
 
-const options = {
-  url: 'https://swapi-api.hbtn.io/api/films/:id' + process.argv[2],
-  headers: {
-    'User-Agent': 'request'
-  }
-};
+const host = 'https://swapi-api.hbtn.io/api/films/:id'.concat('', process.argv[2]);
 
-function callback (error, response, body) {
-  if (!error && response.statusCode === 200) {
-    const info = JSON.parse(body);
-    console.log(info.title);
+request(host, function (err, res, body) {
+  if (err) {
+    console.error(err);
+    return;
   }
-}
-
-request(options, callback);
+  console.log(JSON.parse(body).title);
+});
